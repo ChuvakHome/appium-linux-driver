@@ -94,7 +94,11 @@ commands.setValue = commands.replaceValue = commands.setValueImmediate = async f
 
   await (0, _utils.wait4sec)(0.5);
 
-  _privateapis.default.keyboard_typeStringCopyPaste(_v);
+  for (let i in values) {
+    await (0, _utils.wait4sec)(0.1);
+    
+    _privateapis.default.keyboard_typeStringCopyPaste(values[i]);
+  }
 
   return null;
 };
